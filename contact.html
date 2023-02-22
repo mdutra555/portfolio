@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Mauro Dutra</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/code-icons.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link href="/fontawesome-free-6.3.0-web/css/fontawesome.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.3.0-web/css/brands.css" rel="stylesheet">
+    <link href="/fontawesome-free-6.3.0-web/css/solid.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcjHqUkAAAAAD4JRDxhbXzMi_tMU_2ufhzSW32O"></script>
+    <script>
+        grecaptcha.enterprise.ready(function() {
+            grecaptcha.enterprise.execute('6LcjHqUkAAAAAD4JRDxhbXzMi_tMU_2ufhzSW32O', {action: 'login'}).then(function(token) { });
+        });
+        function onSubmit(token) {
+            document.getElementById("ajax-contact").submit();
+        }
+    </script>    
+  </head>
+
+  
+  <body>
+    <header>
+        <img class="fullscreen" src="images/md_header.jpg"  alt="" title="" >
+    </header>
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item">
+              <a href="/home.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/about.html" class="nav-link">About</a>
+            </li>           
+            <li class="nav-item nav-selected">
+              <a href="/contact.html" class="nav-link">Contact</a>
+            </li>
+        </ul>
+    </nav>    
+    <div class="content">
+        <div class="container-row">
+            <h1>CONTACT ME</h1>
+            <div class="container cols1-2">
+                <section class="panel">
+                    <h3>PREFERRED CONTACT METHODS</h3>
+                    <article style="margin-top: 20px;">
+                        Unless you call me while I am at some mountaintop trail with no bars, or busy on a meeting, I am pretty good at answering my phone. But to get a more reliable form of business contact, I prefer if you either send me a message using the form below or LinkedIn InMail. I will respond to your message as soon as possible — provided I do have Internet access of course. 
+                    </article>
+                    <div class="connections">
+                        <h4>Find more about me here:</h4>
+                        <a href="https://www.linkedin.com/in/mauro-g-dutra/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/mdutra555/" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="documents/Mauro_Dutra_Principal_SDE_Fullstack.pdf" title="Download my resume" target="_blank"><i class="fa-solid fa-file-pdf" download></i></a>
+                    </div>
+                </section>   
+                <section class="panel">
+                    <img src="images/me_el_camino_mountain_top.jpg" title="El Camino, Spain mountain top">
+                </div>
+        </div>
+        <div class="container-row">
+            <h1>CONTACT ME</h1>
+            <div class="container cols2-1">
+                <section id="contact_email" class="panel">
+                    <h3>Quickly email me your message</h3>
+                    <form class="form-control" role="form" id="ajax-contact" method="post" action="">
+
+                        <div class="container cols1-2">
+                            <div class="panel control-label">
+                                <label for="name" class="form-label">Full name</label>
+                            </div>
+                            <div class="panel control icon">
+                                <input type="text" id="fullname" placeholder="Enter your full name" name="fullname" >
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <div class="panel control-label">
+                                <label for="name" class="form-label">Email</label>
+                            </div>
+                            <div class="panel control icon">
+                                <input type="email" id="email" placeholder="Enter email" name="email" >
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="panel control-label">
+                                <label for="name" class="form-label">Phone</label>
+                            </div>
+                            <div class="panel control icon">
+                                <input type="tel" id="telephone" placeholder="Phone number (optional)" name="telephone">
+                                <i class="fa-sharp fa-solid fa-phone"></i>
+                            </div>
+                            <div class="panel control-label">
+                                <label for="name" class="form-label">Message</label>
+                            </div>
+                            <div class="panel control icon">
+                                <textarea placeholder="Message" id="message" name="message" style="height: 210px; padding-top: 13px;"></textarea>
+                                <i class="fa-sharp fa-solid fa-comment"></i>
+                            </div>
+                            <div class="panel control-label">
+                            </div>
+                            <div class="panel">
+                                <button class="g-recaptcha" data-sitekey="6LcjHqUkAAAAAD4JRDxhbXzMi_tMU_2ufhzSW32O" data-callback='onSubmit' data-action='submit'><i class="fa-solid fa-paper-plane"></i>Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+                <section id="contact_email" class="panel">
+                    <ul class="list-unstyled info-bar">
+                        <li>
+                            <i class="fa-solid fa-circle-info"></i>
+                            <h4>Additional info</h4>
+                            <p>Please use this form to email me your questions and comments. You may also call me during business hours. I'll get in touch with you as soon as possible.</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <h4>Location</h4>
+                            <p>Fairfax, Virginia</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:mdutra@mdisys.pw">mdutra@mdisys.pw</a></p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <h4>Phone</h4>
+                            <p>305-766-5883</p>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-clock"></i>
+                            <h4 class="icon-clock">Business Hours</h4>
+                            <p>8:00am - 6:00pm (US ET)</p>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <section class="copyright-section">
+            <div class="container cols2">
+                <div class="panel no-bg text-left" ><p>© 2023 Mauro Dutra all rights reserved.</p></div>
+                <div class="panel no-bg text-right"><p><a href="http://www.mdisys.pw" target="_blank" style="color: #fff">Web Design &amp; Development by MDi systems</a></p></div>
+            </div>
+        </section>
+    </footer>
+	<script src="script/portfolio.js"></script>
+  </body>
+</html>
