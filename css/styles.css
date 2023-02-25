@@ -291,6 +291,7 @@ textarea.form-control {
     border-radius: 6px;
     padding: 10px 20px;
     font-size: 1em;
+    cursor: pointer;
 }
 .g-recaptcha i {
     margin-right: 10px;

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Contact Mauro Dutra</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/code-icons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -47,17 +48,18 @@
                 <section class="panel">
                     <h3>PREFERRED CONTACT METHODS</h3>
                     <article style="margin-top: 20px;">
-                        Unless you call me while I am at some mountaintop trail with no bars, or busy on a meeting, I am pretty good at answering my phone. But to get a more reliable form of business contact, I prefer if you either send me a message using the form below or LinkedIn InMail. I will respond to your message as soon as possible — provided I do have Internet access of course. 
+                        Unless you call me while I am at some mountaintop trail with no bars, or busy in a meeting, I am pretty good at answering my phone. But to get a more reliable form of business contact, I prefer if you either send me a message using the form below or LinkedIn InMail. I will respond to your message as soon as possible — provided I do have Internet access of course. 
                     </article>
                     <div class="connections">
                         <h4>Find more about me here:</h4>
+                        <a href="https://github.com/mdutra555" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/mauro-g-dutra/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.instagram.com/mdutra555/" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                         <a href="documents/Mauro_Dutra_Principal_SDE_Fullstack.pdf" title="Download my resume" target="_blank"><i class="fa-solid fa-file-pdf" download></i></a>
                     </div>
                 </section>   
                 <section class="panel">
-                    <img src="images/me_el_camino_mountain_top.jpg" title="El Camino, Spain mountain top">
+                    <img src="images/me_el_camino_mountain_top.jpg" title="El Camino, Spain mountaintop">
                 </div>
         </div>
         <div class="container-row">
@@ -65,32 +67,32 @@
             <div class="container cols2-1">
                 <section id="contact_email" class="panel">
                     <h3>Quickly email me your message</h3>
-                    <form class="form-control" role="form" id="ajax-contact" method="post" action="">
+                    <form class="form-control" role="form" id="contact" method="post" action="" >
 
                         <div class="container cols1-2">
                             <div class="panel control-label">
-                                <label for="name" class="form-label">Full name</label>
+                                <label for="fullname" class="form-label">Full name</label>
                             </div>
                             <div class="panel control icon">
                                 <input type="text" id="fullname" placeholder="Enter your full name" name="fullname" >
                                 <i class="fa-solid fa-user"></i>
                             </div>
                             <div class="panel control-label">
-                                <label for="name" class="form-label">Email</label>
+                                <label for="email" class="form-label">Email</label>
                             </div>
                             <div class="panel control icon">
                                 <input type="email" id="email" placeholder="Enter email" name="email" >
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div class="panel control-label">
-                                <label for="name" class="form-label">Phone</label>
+                                <label for="telephone" class="form-label">Phone</label>
                             </div>
                             <div class="panel control icon">
-                                <input type="tel" id="telephone" placeholder="Phone number (optional)" name="telephone">
+                                <input type="tel" id="telephone" placeholder="Phone number (optional)" name="telephone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
                                 <i class="fa-sharp fa-solid fa-phone"></i>
                             </div>
                             <div class="panel control-label">
-                                <label for="name" class="form-label">Message</label>
+                                <label for="message" class="form-label">Message</label>
                             </div>
                             <div class="panel control icon">
                                 <textarea placeholder="Message" id="message" name="message" style="height: 210px; padding-top: 13px;"></textarea>
@@ -99,7 +101,7 @@
                             <div class="panel control-label">
                             </div>
                             <div class="panel">
-                                <button class="g-recaptcha" data-sitekey="6LcjHqUkAAAAAD4JRDxhbXzMi_tMU_2ufhzSW32O" data-callback='onSubmit' data-action='submit'><i class="fa-solid fa-paper-plane"></i>Send Message</button>
+                                <button class="g-recaptcha" data-sitekey="6LcjHqUkAAAAAD4JRDxhbXzMi_tMU_2ufhzSW32O" data-callback='onSubmit' data-action='submit' onclick="flApp.sendMessage(event)"><i class="fa-solid fa-paper-plane"></i>Send Message</button>
                             </div>
                         </div>
                     </form>
@@ -144,6 +146,36 @@
             </div>
         </section>
     </footer>
+
+    <dialog id="modal_dialog">
+        <h3 id="dialog_title"></h3>
+        <p id="dialog_message"></p>
+        <form method="dialog">
+            <button>OK</button>
+            <button id="dialog_continue"style="display: none;">Continue</button>
+            <button id="dialog_cancel"style="display: none;">Cancel</button>
+            <button id="dialog_ok">OK</button>
+        </form>
+    </dialog>
+    
+	<script src="script/core.js"></script>
 	<script src="script/portfolio.js"></script>
+	<script src="script/common_dialog_widget.js"></script>
+    <script>
+        flApp.showSendMessageResult = function(json) {
+            if (json.resp == 'OK') {
+                let options = {
+                    dialogTitle: 'Successful Post',
+                    dialogMessage: "Thank you for contacting me. I will respond your inquiry as soon as possible."
+                }
+            } else {
+                let options = {
+                    dialogTitle: 'Post Failed',
+                    dialogMessage: "Something went wrong, sorry for the incovenience. Please try again later."
+                }
+            }
+            flApp.commonDialog.openDialog(options);
+        }
+    </script>    
   </body>
 </html>

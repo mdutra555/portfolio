@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>About Mauro Dutra</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/code-icons.min.css">
@@ -40,6 +41,7 @@
                     </article>
                     <div class="connections">
                         <h4>Find more about me here:</h4>
+                        <a href="https://github.com/mdutra555" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/mauro-g-dutra/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.instagram.com/mdutra555/" title="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                         <a href="documents/Mauro_Dutra_Principal_SDE_Fullstack.pdf" title="Download my resume" target="_blank"><i class="fa-solid fa-file-pdf" download></i></a>
@@ -56,6 +58,18 @@
             </div>
         </section>
     </footer>
+
+    <dialog id="modal_dialog" style="display: none;">
+        <h3 id="dialog_title"></h3>
+        <button id="close_btn" aria-label="close" novalidate>X</button>
+        <p id="dialog_message"></p>
+        <div>
+            <button id="continue">Continue</button>
+            <button id="cancel">Cancel</button>
+            <button id="ok" style="display: none;">OK</button>
+        </div>
+    </dialog>
+        
 	<script src="script/portfolio.js"></script>
   </body>
 </html>
